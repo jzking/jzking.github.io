@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+    <head>
+        <title>CS 498 Narrative Visualization - Zach King</title>
+		<style>
+			.tooltip {
+              position: absolute;
+              font-size: 12px;
+              width:  auto;  
+              height: auto;
+              pointer-events: none;
+              background-color: white;
+            }	
+		</style> 
+    </head>
+
+    <body>
+        <script src="run.js"></script>
+
+        <div id="overview" class="container-fluid" style="height:300px;">
+            <div>
+                <p>
+                    <h1>COVID-19 Deaths Per Capita (100k) - Geographic Overview</h1>
+                    The choropleth map below represents death per capita in the USA from COVID-19 as of 2022-06-12.<p>
+                    You can get a feel for how the death rate of COVID-19 is distrubuted geogrpahically in the USA.</br>
+                    <script src="map.js"></script>
+                </p>
+                <p><div><a href="#" id="toScatter">Next: Deaths vs Income</a></div></p>
+            </div>
+        </div>
+        
+        <div id="scatter" class="container-fluid" style="height:300px; display:none;">
+            <div>
+                <p>
+                    <p><div></div><a href="#" id="backToOverview">Back: Geo Overview</a></div></p>
+                    <h1>Deaths Per Capita vs Median Income</h1>
+                    The scatter plot below represents death per capita in the USA from COVID-19, as of 2022-06-12, against median income by state.<p>
+                    You can see there is a visible negative correlation between income and deaths.</br></br>
+                    <script src="scatter.js"></script>
+                </p>
+                <p><div><a href="#" id="toRegions">Next: Select a Region</a></div></p>
+            </div>
+        </div>
+
+                
+        <div id="regions" class="container-fluid" style="height:300px; display:none;">
+            <div>
+                <p>
+                    <p><div><a href="#" id="backToScatter">Back: Deaths by Income</a></div></p>
+                    <h1>Deaths Per Capita vs Median Income by Region</h1>
+                    You can now choose different regions in the United States to see if there are geographical clusters with similar death rates and how those regions relate to income.</br></br>
+                    <select id="regionMenu"></select>
+                    <script src="regions.js"></script>
+                </p>
+                <p><div><a href="#" id="startOver">Back to Geo Overview</a></div></p>
+            </div>
+        </div>
+        
+
+    </body>
+
+</html>
